@@ -1,0 +1,218 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ==========================================================
+   INDIAN BHAR — Luxury Indian Restaurant Design System
+   Warm spice palette: deep crimson, saffron gold, charcoal
+   ========================================================== */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-saffron: var(--saffron);
+  --color-saffron-foreground: var(--saffron-foreground);
+  --color-spice: var(--spice);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-display: 'Amiri', 'Cormorant Garamond', serif;
+  --font-body: 'Tajawal', 'Inter', sans-serif;
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Warm cream background, charcoal text */
+  --background: oklch(0.985 0.012 80);
+  --foreground: oklch(0.18 0.02 30);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 30);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 30);
+
+  /* Primary: deep crimson (Indian flag inspired) */
+  --primary: oklch(0.42 0.18 22);
+  --primary-foreground: oklch(0.985 0.012 80);
+  --primary-glow: oklch(0.55 0.22 28);
+
+  /* Saffron gold accent */
+  --saffron: oklch(0.78 0.16 65);
+  --saffron-foreground: oklch(0.2 0.04 40);
+
+  /* Spice green (mint chutney) */
+  --spice: oklch(0.55 0.13 145);
+
+  --secondary: oklch(0.94 0.025 70);
+  --secondary-foreground: oklch(0.25 0.04 30);
+
+  --muted: oklch(0.95 0.015 75);
+  --muted-foreground: oklch(0.48 0.03 40);
+
+  --accent: oklch(0.92 0.06 70);
+  --accent-foreground: oklch(0.28 0.08 35);
+
+  --destructive: oklch(0.55 0.23 28);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --success: oklch(0.6 0.15 145);
+  --success-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.88 0.02 60);
+  --input: oklch(0.92 0.018 65);
+  --ring: oklch(0.55 0.22 28);
+
+  --sidebar: oklch(0.22 0.04 30);
+  --sidebar-foreground: oklch(0.95 0.015 70);
+  --sidebar-primary: oklch(0.78 0.16 65);
+  --sidebar-primary-foreground: oklch(0.2 0.04 40);
+  --sidebar-accent: oklch(0.3 0.05 30);
+  --sidebar-accent-foreground: oklch(0.95 0.015 70);
+  --sidebar-border: oklch(0.3 0.04 30);
+  --sidebar-ring: oklch(0.78 0.16 65);
+
+  /* Gradients & shadows */
+  --gradient-hero: linear-gradient(135deg, oklch(0.32 0.16 25) 0%, oklch(0.42 0.18 22) 50%, oklch(0.55 0.22 35) 100%);
+  --gradient-saffron: linear-gradient(135deg, oklch(0.82 0.16 70) 0%, oklch(0.72 0.19 50) 100%);
+  --gradient-card: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(0.98 0.01 70) 100%);
+  --gradient-overlay: linear-gradient(to top, oklch(0.18 0.02 30 / 0.85), transparent);
+
+  --shadow-elegant: 0 10px 40px -12px oklch(0.42 0.18 22 / 0.25);
+  --shadow-glow: 0 0 60px oklch(0.78 0.16 65 / 0.35);
+  --shadow-card: 0 4px 20px -4px oklch(0.18 0.02 30 / 0.1);
+
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark {
+  --background: oklch(0.16 0.02 30);
+  --foreground: oklch(0.96 0.01 70);
+  --card: oklch(0.22 0.03 30);
+  --card-foreground: oklch(0.96 0.01 70);
+  --popover: oklch(0.22 0.03 30);
+  --popover-foreground: oklch(0.96 0.01 70);
+  --primary: oklch(0.62 0.22 32);
+  --primary-foreground: oklch(0.99 0 0);
+  --primary-glow: oklch(0.7 0.2 35);
+  --saffron: oklch(0.78 0.16 65);
+  --saffron-foreground: oklch(0.18 0.02 30);
+  --spice: oklch(0.65 0.15 145);
+  --secondary: oklch(0.28 0.04 30);
+  --secondary-foreground: oklch(0.96 0.01 70);
+  --muted: oklch(0.26 0.03 30);
+  --muted-foreground: oklch(0.7 0.02 60);
+  --accent: oklch(0.32 0.06 35);
+  --accent-foreground: oklch(0.96 0.01 70);
+  --destructive: oklch(0.62 0.22 28);
+  --destructive-foreground: oklch(0.99 0 0);
+  --success: oklch(0.65 0.15 145);
+  --success-foreground: oklch(0.99 0 0);
+  --border: oklch(0.3 0.03 30);
+  --input: oklch(0.3 0.03 30);
+  --ring: oklch(0.78 0.16 65);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    font-family: var(--font-body);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  /* RTL specifics */
+  [dir="rtl"] {
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+  }
+
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 {
+    font-family: 'Amiri', 'Cairo', serif;
+  }
+
+  /* Decorative scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--color-muted); }
+  ::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 6px; }
+}
+
+@layer utilities {
+  .bg-hero-gradient { background: var(--gradient-hero); }
+  .bg-saffron-gradient { background: var(--gradient-saffron); }
+  .bg-card-gradient { background: var(--gradient-card); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .transition-smooth { transition: var(--transition-smooth); }
+
+  .text-gradient-saffron {
+    background: var(--gradient-saffron);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Decorative paisley/mandala pattern */
+  .pattern-indian {
+    background-image: radial-gradient(circle at 1px 1px, oklch(0.78 0.16 65 / 0.15) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float { animation: float 3s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
